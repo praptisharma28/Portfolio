@@ -83,7 +83,7 @@ export const Particles: React.FC<ParticlesProps> = ({
   ease = 50,
   size = 0.4,
   refresh = false,
-  color = "#ffffff",
+  color: _color = "#ffffff",
   vx = 0,
   vy = 0,
   ...props
@@ -98,6 +98,23 @@ export const Particles: React.FC<ParticlesProps> = ({
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
   const rafID = useRef<number | null>(null);
   const resizeTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [color, setColor] = useState(_color);
+
+  useEffect(() => {
+    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setColor(isDarkMode ? "#ffffff" : "#000000");
+
+    const listener = (e: MediaQueryListEvent) => {
+      setColor(e.matches ? "#ffffff" : "#000000");
+    };
+
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    media.addEventListener("change", listener);
+
+    return () => {
+      media.removeEventListener("change", listener);
+    };
+  }, []);
 
   useEffect(() => {
     if (canvasRef.current) {
