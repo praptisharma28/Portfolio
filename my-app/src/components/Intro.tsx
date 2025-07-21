@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import PronounButton from "@/components/PronounButton";
+
 
 const Intro = () => {
   const words = [
@@ -28,9 +30,11 @@ const Intro = () => {
         <p className="text-base text-gray-700 dark:text-gray-300">
           Fullstack Engineer with 5+ years in coding. Open source and Web3 is my current niche.
         </p>
-        <p className="text-base text-gray-700 dark:text-gray-300">
-          Pronouns – she/her
-        </p>
+       <div className="flex items-center gap-2">
+  <span>Pronouns:</span>
+  <PronounButton />
+</div>
+
       </div>
       <div className="w-3/12">
         <Image
