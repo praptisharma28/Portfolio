@@ -1,89 +1,98 @@
-"use client";
+import Image from 'next/image';
+import React from 'react';
 
-import React from "react";
-import { Element } from "react-scroll";
-import ProjectsConfig from "./ProjectsConfig";
-
-interface ProjectConfig {
+interface Project {
   title: string;
-  previewImage: string;
+  image?: string;
   description: string;
-  githubLink?: string;
-  liveDemoLink?: string;
-  downloads?: string;
+  viewLink?: string;
+  codeLink?: string;
+  techStack?: string[];
 }
 
-const MyProjects: React.FC = () => {
-  const truncate = (str: string, len: number): string => {
-    return str.length >= len ? str.substr(0, len) + "..." : str;
-  };
+interface MyProjectsProps {
+  project: Project;
+}
+
+const MyProjects: React.FC<MyProjectsProps> = ({ project }) => {
+  // Define gradient backgrounds for cards without images
+  const gradients = [
+    'bg-gradient-to-br from-orange-400 via-pink-500 to-red-500',
+    'bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600',
+    'bg-gradient-to-br from-green-400 via-blue-500 to-purple-600',
+    'bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500',
+    'bg-gradient-to-br from-pink-400 via-red-500 to-yellow-500',
+    'bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500',
+    'bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600',
+    'bg-gradient-to-br from-emerald-400 via-cyan-500 to-blue-500'
+  ];
+
+  const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
 
   return (
-    <Element name="myProjects">
-      <div className="mb-6 sm:mb-44 py-5">
-        <span className="flex text-gray-300 text-xl sm:text-2xl justify-center sm:justify-start">
-          My <span className="font-semibold">&nbsp;Projects</span>
-        </span>
-        <div className="flex flex-col space-y-20 py-10">
-          {(ProjectsConfig as ProjectConfig[]).map((config, idx) => (
-            <div
-              key={idx}
-              className="h-auto w-full text-white rounded-md flex flex-col lg:flex-row backdrop-filter backdrop-blur-md bg-gray-900 p-4 sm:p-10 bg-opacity-80 transform transition-all hover:scale-105 sm:hover:scale-110 cursor-pointer"
-            >
-              <div className="w-full rounded-2xl">
-                <img
-                  src={config.previewImage}
-                  className="w-full h-full rounded object-cover shadow-2xl transform transition-all hover:scale-110"
-                  alt={`${config.title} Preview`}
-                />
-              </div>
-              <div className="w-full h-full flex flex-col pt-6 md:p-8">
-                <span className="mb-1 font-bold text-lg md:text-xl">
-                  {config.title}
-                </span>
-
-                {config.downloads && (
-                  <div className="mt-1">
-                    <img src={config.downloads} alt="Downloads" />
-                  </div>
-                )}
-
-                <div className="mt-2 mb-4">
-                  <p className="text-xs md:text-sm lg:text-md leading-relaxed">
-                    {config.description}
-                  </p>
-                </div>
-
-                {config.liveDemoLink ? (
-                  <div className="flex justify-between mt-auto">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={config.liveDemoLink}
-                      className="font-bold text-blue-400"
-                    >
-                      Live Demo
-                    </a>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={config.githubLink}
-                      className="font-bold text-gray-400"
-                    >
-                      Source Code
-                    </a>
-                  </div>
-                ) : (
-                  <div className="mt-auto">
-                    <span className="text-sm">Still in development ...</span>
-                  </div>
-                )}
-              </div>
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.015] transition-all duration-300 max-w-md overflow-hidden">
+      {/* Image or Gradient Header */}
+      <div className={`h-48 ${project.image ? 'bg-gray-100' : randomGradient} relative overflow-hidden`}>
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-20 h-20 bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center">
+              <div className="w-12 h-12 bg-white/30 rounded-lg"></div>
             </div>
-          ))}
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <h2 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h2>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{project.description}</p>
+
+        {/* Tech Stack */}
+        {project.techStack && project.techStack.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.techStack.map((tech, index) => (
+              <span
+                key={index}
+                className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-md font-medium"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Action Buttons */}
+        <div className="flex gap-3">
+          {project.viewLink && (
+            <a
+              href={project.viewLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-900 text-white text-sm px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors font-medium"
+            >
+              View
+            </a>
+          )}
+          {project.codeLink && (
+            <a
+              href={project.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-100 text-gray-900 text-sm px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+            >
+              Code
+            </a>
+          )}
         </div>
       </div>
-    </Element>
+    </div>
   );
 };
 
