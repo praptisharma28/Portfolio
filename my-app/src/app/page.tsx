@@ -7,6 +7,7 @@ import MyProjects from "@/components/MyProjects";
 import { projects } from "@/components/ProjectsSection";
 import { useState } from "react";
 import { MdKeyboardDoubleArrowDown, MdKeyboardDoubleArrowUp } from "react-icons/md";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   const showAllVis = projects.length > 4;
@@ -18,11 +19,14 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Intro />
 
-        <div className="flex flex-col gap-[32px] justify-center w-full max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold mb-6 mt-6">
-            My Work Experience
+        <div className="w-130 max-w-4xl mx-12 mt-12">
+          <h3 className="text-2xl font-bold mt-4 mb-5">
+            My work experience
           </h3>
           <WorkExperience />
+        </div>
+        <div className="flex flex-col gap-[32px] w-full max-w-4xl">
+          <Skills />
         </div>
 
         <div className="w-130 max-w-4xl mx-12 mt-12">
