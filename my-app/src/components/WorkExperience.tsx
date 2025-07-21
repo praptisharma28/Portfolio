@@ -89,7 +89,7 @@ const WorkExperience = () => {
         ♻️
         </span>
         <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-          Member at FOSSC
+          Member at FOSSCU
         </h3>
         <time className="block mb-2 text-sm text-gray-500 dark:text-gray-400">
           Dec 2023 – Present
