@@ -25,7 +25,7 @@ export default function Home() {
           </h3>
           <WorkExperience />
         </div>
-        <div className="flex flex-col gap-[32px] w-full max-w-4xl">
+        <div className="flex flex-col gap-[32px] w-full max-w-3xl">
           <Skills />
         </div>
 

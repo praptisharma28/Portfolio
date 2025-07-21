@@ -26,7 +26,7 @@ const Skills = () => {
   const duplicatedSkills = [...skills, ...skills];
 
   return (
-    <div className="w-full py-4 overflow-hidden bg-transparent">
+    <div className="w-full py-4 overflow-hidden bg-transparent mx-11">
       <div className="flex items-center gap-2 mb-3">
         <motion.div
           animate={{ rotate: [0, 360] }}
