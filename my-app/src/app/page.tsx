@@ -1,5 +1,7 @@
+import WorkExperience from "@/components/WorkExperience";
 import Intro from "../components/Intro";
 import { Particles } from "../components/magicui/particles";
+import Writings from "@/components/Writings";
 
 export default function Home() {
   return (
@@ -8,6 +10,17 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
       </main>
       <Intro />
+      <div className="flex flex-col gap-[32px] justify-center w-full max-w-4xl mx-auto">
+        <h1 className="text-2xl font-bold gap-[32px] mt-12">
+          My Work Experience
+        </h1>
+      <WorkExperience />
+      </div>
+      <div>
+        <div className="flex flex-col gap-[32px] justify-center w-full max-w-4xl mx-auto mt-12">
+      <Writings />
+      </div>
     </div>
+  </div>
   );
 }
