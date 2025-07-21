@@ -12,11 +12,11 @@ const Intro = () => {
       </div>
       <div className="w-3/12 flex-1">
         <Image
-          src="/images/praptiprofile.jpeg"
-          alt="Yatharth"
+          src="/images/profile.jpeg"
+          alt="prapti's image"
             width={100}
             height={100}
-          className="rounded-full w-full h-auto object-cover"
+          className="rounded-sm border border-gray-100 w-full h-auto object-cover"
           loading="lazy"
         />
       </div>
