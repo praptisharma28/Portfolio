@@ -1,20 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-interface Project {
-  title: string;
-  image?: string;
-  description: string;
-  viewLink?: string;
-  codeLink?: string;
-  techStack?: string[];
-}
-
-interface MyProjectsProps {
-  project: Project;
-}
-
-const MyProjects: React.FC<MyProjectsProps> = ({ project }) => {
+const MyProjects = ({ project }) => {
   // Define gradient backgrounds for cards without images
   const gradients = [
     'bg-gradient-to-br from-orange-400 via-pink-500 to-red-500',
@@ -30,9 +17,9 @@ const MyProjects: React.FC<MyProjectsProps> = ({ project }) => {
   const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
 
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.015] transition-all duration-300 max-w-md overflow-hidden">
+    <div className="bg-white rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 w-full overflow-hidden">
       {/* Image or Gradient Header */}
-      <div className={`h-48 ${project.image ? 'bg-gray-100' : randomGradient} relative overflow-hidden`}>
+      <div className={`h-32 ${project.image ? 'bg-gray-100' : randomGradient} relative overflow-hidden`}>
         {project.image ? (
           <Image
             src={project.image}
@@ -42,17 +29,17 @@ const MyProjects: React.FC<MyProjectsProps> = ({ project }) => {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-20 h-20 bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center">
-              <div className="w-12 h-12 bg-white/30 rounded-lg"></div>
+            <div className="w-12 h-12 bg-white/20 rounded-lg backdrop-blur-sm flex items-center justify-center">
+              <div className="w-8 h-8 bg-white/30 rounded-md"></div>
             </div>
           </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h2>
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{project.description}</p>
+      <div className="p-4">
+        <h2 className="text-lg font-semibold text-gray-900 mb-1">{project.title}</h2>
+        <p className="text-gray-600 text-xs mb-3 line-clamp-2">{project.description}</p>
 
         {/* Tech Stack */}
         {project.techStack && project.techStack.length > 0 && (

@@ -18,16 +18,7 @@ const imageMap = {
   // BlogBuddyPreview,
 };
 
-export interface Project {
-  title: string;
-  image?: string;
-  description: string;
-  viewLink?: string;
-  codeLink?: string;
-  techStack?: string[];
-}
-
-export const projects: Project[] = [
+export const projects = [
   {
     title: "MiniServe-RS",
     description: "A minimal HTTP server built in Rust exploring low-level networking, request parsing and response handling.",
@@ -92,11 +83,7 @@ export const projects: Project[] = [
   },
 ];
 
-interface ProjectCardProps {
-  project: Project;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard = ({ project }) => {
   const imageSrc = project.image && imageMap[project.image as keyof typeof imageMap];
   
   // Define gradient backgrounds for cards without images
@@ -183,7 +170,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   );
 };
 
-const ProjectsSection: React.FC = () => (
+const ProjectsSection = () => (
   <section className="py-10 px-6 max-w-7xl mx-auto">
     <h1 className="text-3xl font-bold mb-8">Projects</h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
