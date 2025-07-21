@@ -46,7 +46,6 @@ const Writings = () => {
 
   return (
     <section className="flex flex-col gap-6">
-      <SectionTitle title="Writings" />
 
       <div className="flex flex-col md:gap-4 gap-5">
         {visibleWritings.map((writing) => (

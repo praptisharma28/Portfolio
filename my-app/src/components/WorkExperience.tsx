@@ -5,7 +5,7 @@ const WorkExperience = () => {
     <ol className="relative border-s border-gray-200 dark:border-gray-700">
 
       {/* GSoC Intern */}
-      <li className="mb-10 ms-6">
+      <li className="mb-5 ms-6">
         <span className="absolute flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-green-800">
           🧑‍💻
         </span>
@@ -24,7 +24,7 @@ const WorkExperience = () => {
       </li>
 
       {/* Swyftin */}
-      <li className="mb-10 ms-6">
+      <li className="mb-5 ms-6">
         <span className="absolute flex items-center justify-center w-6 h-6 bg-purple-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-purple-800">
           ⚙️
         </span>
@@ -43,7 +43,7 @@ const WorkExperience = () => {
       </li>
 
       {/* AI Intern */}
-      <li className="mb-10 ms-6">
+      <li className="mb-5 ms-6">
         <span className="absolute flex items-center justify-center w-6 h-6 bg-pink-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-pink-800">
           🤖
         </span>
@@ -62,7 +62,7 @@ const WorkExperience = () => {
       </li>
 
       {/* AWS Captain & Club */}
-      <li className="mb-10 ms-6">
+      <li className="mb-5 ms-6">
         <span className="absolute flex items-center justify-center w-6 h-6 bg-yellow-200 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-yellow-700">
           ☁️
         </span>
@@ -84,7 +84,7 @@ const WorkExperience = () => {
       </li>
 
       {/* FOSSC Member */}
-      <li className="ms-6">
+      <li className="mb-5 ms-6">
         <span className="absolute flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-green-700">
         ♻️
         </span>
