@@ -19,14 +19,14 @@ export default function Home() {
         <Intro />
 
         <div className="flex flex-col gap-[32px] justify-center w-full max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold gap-[32px] mt-12">
+          <h3 className="text-2xl font-bold mb-6 mt-6">
             My Work Experience
-          </h2>
+          </h3>
           <WorkExperience />
         </div>
 
-        <div className="w-150 max-w-4xl mx-12 mt-12">
-          <h2 className="text-2xl font-bold mb-6">My Projects</h2>
+        <div className="w-130 max-w-4xl mx-12 mt-12">
+          <h3 className="text-2xl font-bold mb-6">My Projects</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4">
             {visibleProjects.map((project, index) => (
               <MyProjects key={index} project={project} />
@@ -47,7 +47,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-[32px] justify-center w-full max-w-4xl mx-auto mt-12">
-          <h2 className="text-2xl font-bold">My Writings</h2>
+          <h3 className="text-2xl font-bold">My Writings</h3>
           <Writings />
         </div>
       </main>

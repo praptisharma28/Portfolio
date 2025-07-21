@@ -70,7 +70,7 @@ const WorkExperience = () => {
           AWS Cloud Captain & Founder at AWS Cloud Club KIET
         </h3>
         <time className="block mb-2 text-sm text-gray-500 dark:text-gray-400">
-          Feb 2024 – Present · Remote + On Campus
+          Feb 2024 – Present
         </time>
         {/* <p className="text-base text-gray-700 dark:text-gray-300">
           Selected as one of 13 AWS Cloud Captains in India from 1,146 applicants. Founded Cloud Club KIET with 80+ members, hosted sessions, judged hackathons, and built a cloud community.
@@ -81,6 +81,25 @@ const WorkExperience = () => {
           <img className="w-8 h-8 border-2 border-white rounded-full dark:border-gray-800" src="/images/aws-icon3.png" alt="CloudFormation" />
           <a className="flex items-center justify-center w-8 h-8 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800" href="#">+5</a>
         </div> */}
+      </li>
+
+      {/* FOSSC Member */}
+      <li className="ms-6">
+        <span className="absolute flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-green-700">
+        ♻️
+        </span>
+        <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+          Member at FOSSC
+        </h3>
+        <time className="block mb-2 text-sm text-gray-500 dark:text-gray-400">
+          Dec 2023 – Present
+        </time>
+        {/* <p className="text-base text-gray-700 dark:text-gray-300">
+          Contributed to open source as part of FOSSC. Focused on backend engineering, Django, and full-stack development practices.
+        </p>
+        <p className="text-sm mt-2 text-gray-500 dark:text-gray-400">
+          <strong>Skills:</strong> Django · Python · Backend · Full-Stack Web Development
+        </p> */}
       </li>
     </ol>
   );
